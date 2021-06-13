@@ -7,7 +7,7 @@
 }
 
 body {
-	background: linear-gradient(90deg, rgba(245, 213, 255, 1) 0%, rgb(167, 57, 240) 70%, rgba(245, 213, 255, 1) 100%);
+	background: linear-gradient(-45deg, rgba(245, 213, 255, 1) 0%, rgb(167, 57, 240) 70%, rgba(245, 213, 255, 1) 100%);
 	background-size: 400% 400%;
 	animation: gradient 30s ease infinite;
 }
