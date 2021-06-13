@@ -6,11 +6,11 @@ const Home = () => {
 	return (
 		<div className="Home-border">
 			<div className="Home-align">
-				<img src={logo} alt="logo" />
-				<p>
-					This is the home page of the project. It will contain a login and register functionality for the user to
-					access the application! Enjoy!
-				</p>
+				<img src={logo} className="Home-logo" alt="LOGO" />
+				<h2>ANALYTICAL REPORT</h2>
+				<p>Summarised Reports at your fingertips.</p>
+				<button>REGISTER</button>
+				<button>LOGIN</button>
 			</div>
 		</div>
 	);
