@@ -7,7 +7,6 @@ function App() {
 		<BrowserRouter>
 			<div className="App">
 				<Route exact path="/" component={Home} />
-				<h1> This is the app.</h1>
 			</div>
 		</BrowserRouter>
 	);
