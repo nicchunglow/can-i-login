@@ -1,0 +1,16 @@
+.Home-align {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.Home-border {
+	width: 80%;
+	max-width: 500px;
+	margin: 50px;
+	padding: 100px 10px;
+	background-color: #f7f7f7;
+	border-radius: 10px;
+}
