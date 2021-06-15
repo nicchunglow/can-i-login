@@ -25,7 +25,7 @@ const Reports = () => {
 		<Container maxWidth="sm">
 			<Card className="card">
 				<div className="card-container">
-					{report}
+					{report ? report : "You are not authorised"}
 					<Link to="/" className="button">
 						<Button variant="contained" color="secondary">
 							Back to Home
