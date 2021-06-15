@@ -1,0 +1,17 @@
+.register-container {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+}
+
+.register-helper {
+	color: #747474;
+	font-size: 0.8vw;
+	font-weight: bolder;
+}
+
+@media only screen and (max-width: 1200px) {
+	.register-helper {
+		font-size: 1.4vw;
+	}
+}
