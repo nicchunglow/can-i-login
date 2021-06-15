@@ -1,7 +1,7 @@
 import React from "react";
 import "./Home.css";
-import "../Components/Shared/Button.css";
-import "../Components/Shared/Card.css";
+import "../Shared/Button.css";
+import "../Shared/Card.css";
 import logo from "../../src/logo.svg";
 import { Card, Box, Button, Container } from "@material-ui/core";
 import { Link } from "react-router-dom";

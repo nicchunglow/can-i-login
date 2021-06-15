@@ -1,16 +1,12 @@
 import React, { useState } from "react";
 import "./Register.css";
-import "./Shared/Card.css";
+import "../Shared/Card.css";
 import { Container } from "@material-ui/core";
 import { Card, Button, FormControl, Input, InputLabel, FormHelperText, Snackbar } from "@material-ui/core";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-interface IRegister {
-	email: string;
-	password: string;
-	firstName: string;
-	lastname: string;
-}
+import { IRegister } from "../Models/register.model";
+
 const Register = () => {
 	const {
 		register,
