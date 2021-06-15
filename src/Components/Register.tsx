@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Container, Card, Button, FormControl, Input, InputLabel, FormHelperText, Snackbar } from "@material-ui/core";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import Axios from "axios";
+import configuredAxios from "../Utils/Axios";
 import { IRegister } from "../Models/users.model";
 import "./Register.css";
 import "../Shared/Card.css";
@@ -29,7 +29,7 @@ const Register = () => {
 				firstName: data.firstName,
 				lastName: data.lastName,
 			};
-			await Axios.post(process.env.REACT_APP_BASE_BACKEND_URL + `/users/register`, payload);
+			await configuredAxios.post(process.env.REACT_APP_BASE_BACKEND_URL + `/users/register`, payload);
 			setSnackBarMessage("Registration Success");
 			setOpen(true);
 		} catch (err) {

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Container, Card, Button, FormControl, Input, InputLabel, Snackbar } from "@material-ui/core";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import Axios from "axios";
+import configuredAxios from "../Utils/Axios";
 import { ILogin } from "../Models/users.model";
 import "./Register.css";
 import "../Shared/Card.css";
@@ -27,7 +27,8 @@ const Login = () => {
 				email: data.email,
 				password: data.password,
 			};
-			await Axios.post(process.env.REACT_APP_BASE_BACKEND_URL + `/users/login`, payload);
+
+			await configuredAxios.post(process.env.REACT_APP_BASE_BACKEND_URL + `/users/login`, payload);
 			setSnackBarMessage("Login success! ");
 			setOpen(true);
 		} catch (err) {
