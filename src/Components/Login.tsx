@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { Container, Card, Button, FormControl, Input, InputLabel, FormHelperText, Snackbar } from "@material-ui/core";
+import { Container, Card, Button, FormControl, Input, InputLabel, Snackbar } from "@material-ui/core";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import Axios from "axios";
-import { IRegister } from "../Models/users.model";
+import { ILogin } from "../Models/Users.model";
 import "./Register.css";
 import "../Shared/Card.css";
 
-const Register = () => {
+const Login = () => {
 	const {
 		register,
 		handleSubmit,
@@ -21,16 +21,14 @@ const Register = () => {
 		setOpen(false);
 	};
 
-	const onSubmit = async (data: IRegister) => {
+	const onSubmit = async (data: ILogin) => {
 		try {
-			const payload: IRegister = {
+			const payload: ILogin = {
 				email: data.email,
 				password: data.password,
-				firstName: data.firstName,
-				lastName: data.lastName,
 			};
-			await Axios.post(process.env.REACT_APP_BASE_BACKEND_URL + `/users/register`, payload);
-			setSnackBarMessage("Registration Success");
+			await Axios.post(process.env.REACT_APP_BASE_BACKEND_URL + `/users/login`, payload);
+			setSnackBarMessage("Login success! ");
 			setOpen(true);
 		} catch (err) {
 			setSnackBarMessage(err.message);
@@ -50,7 +48,7 @@ const Register = () => {
 			/>
 			<Card className="card" variant="outlined">
 				<div className="card-container">
-					<h2>REGISTER</h2>
+					<h2>LOGIN</h2>
 					<form className="card-container" onSubmit={handleSubmit(onSubmit)}>
 						<FormControl size="small">
 							<InputLabel>Email</InputLabel>
@@ -66,29 +64,6 @@ const Register = () => {
 								placeholder="Password"
 							/>
 							{errors.password && <p>Password is required.</p>}
-
-							<FormHelperText id="password-helper">
-								Do remember to include : <br />
-								<span className="register-helper">
-									1 Uppercase, <br />1 Lowercase <br />
-									and numbers
-								</span>
-							</FormHelperText>
-						</FormControl>
-						<FormControl>
-							<InputLabel>First Name</InputLabel>
-							<Input {...register("firstName")} aria-label="firstName" type="text" placeholder="First Name" />
-							{errors.lastName && <p>First name is required.</p>}
-						</FormControl>
-						<FormControl>
-							<InputLabel>Last Name</InputLabel>
-							<Input
-								{...register("lastName", { required: true })}
-								aria-label="lastName"
-								type="text"
-								placeholder="Last Name"
-							/>
-							{errors.lastName && <p>Last name is required.</p>}
 						</FormControl>
 						<Input className="submit-button" type="submit" />
 					</form>
@@ -105,4 +80,4 @@ const Register = () => {
 	);
 };
 
-export default Register;
+export default Login;
