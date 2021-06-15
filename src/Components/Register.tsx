@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import "./Register.css";
-import "../Shared/Card.css";
-import { Container } from "@material-ui/core";
-import { Card, Button, FormControl, Input, InputLabel, FormHelperText, Snackbar } from "@material-ui/core";
+import { Container, Card, Button, FormControl, Input, InputLabel, FormHelperText, Snackbar } from "@material-ui/core";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import Axios from "axios";
 import { IRegister } from "../Models/register.model";
+import "./Register.css";
+import "../Shared/Card.css";
 
 const Register = () => {
 	const {
@@ -15,12 +15,29 @@ const Register = () => {
 	} = useForm();
 
 	const [open, setOpen] = useState(false);
+	const [snackBarMessage, setSnackBarMessage] = useState("");
 
 	const handleClose = () => {
 		setOpen(false);
 	};
 
-	const onSubmit = (data: IRegister) => setOpen(true);
+	const onSubmit = async (data: IRegister) => {
+		try {
+			const payload: IRegister = {
+				email: data.email,
+				password: data.password,
+				firstName: data.firstName,
+				lastName: data.lastName,
+			};
+			await Axios.post(process.env.REACT_APP_BASE_BACKEND_URL + `/users/register`, payload);
+			setSnackBarMessage("Registration Success");
+			setOpen(true);
+		} catch (err) {
+			setSnackBarMessage(err.message);
+			setOpen(true);
+		}
+	};
+
 	return (
 		<Container maxWidth="sm">
 			<Snackbar
@@ -28,7 +45,7 @@ const Register = () => {
 				open={open}
 				onClose={handleClose}
 				autoHideDuration={3000}
-				message="Registration Successful"
+				message={snackBarMessage}
 				key="snackbar"
 			/>
 			<Card className="card" variant="outlined">
@@ -37,7 +54,7 @@ const Register = () => {
 					<form className="card-container" onSubmit={handleSubmit(onSubmit)}>
 						<FormControl size="small">
 							<InputLabel>Email</InputLabel>
-							<Input {...register("lastName", { required: true })} aria-label="email" type="text" placeholder="Email" />
+							<Input {...register("email", { required: true })} aria-label="email" type="text" placeholder="Email" />
 							{errors.email && <p>Email is required.</p>}
 						</FormControl>
 						<FormControl>
