@@ -1,4 +1,4 @@
-## Can I Login? - authorisation Assignment.
+## Can I Login? - Authentication  Assignment.
 
 #### Table of contents
 
