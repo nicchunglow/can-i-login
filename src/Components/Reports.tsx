@@ -3,20 +3,17 @@ import "../Shared/Button.css";
 import "../Shared/Card.css";
 import { Card, Button, Container } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import Axios from "axios";
+import configuredAxios from "../Utils/Axios";
 
-interface IAuth {
-	email: string;
-	firstName: string;
-	lastName: string;
+interface IReport {
+	message?: string;
 }
 
 const Reports = () => {
-	const [report, setReport] = useState<IAuth>();
+	const [report, setReport] = useState<IReport>();
 	const loadReportsDetails = async () => {
-		const res = await Axios.get(process.env.REACT_APP_BASE_BACKEND_URL + "/reports");
-		console.log(res);
-		setReport(res.data);
+		const res = await configuredAxios.get(process.env.REACT_APP_BASE_BACKEND_URL + "/reports");
+		setReport(res.data.message);
 	};
 
 	useEffect(() => {

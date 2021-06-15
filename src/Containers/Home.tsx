@@ -31,7 +31,6 @@ const Home = () => {
 			<Card className="card">
 				<div className="card-container">
 					<img src={logo} className="home-logo" alt="LOGO" />
-					{!!login && <h2>Welcome {login.firstName}! You are now logined!</h2>}
 					<h2>ANALYTICAL REPORT</h2>
 					<p>Summarised Reports at your fingertips.</p>
 					<Box component="span" m={1} className="home-button-container">
@@ -45,12 +44,15 @@ const Home = () => {
 								LOGIN
 							</Button>
 						</Link>
+					</Box>
+					{!!login && <h3>Welcome {login.firstName}! You are now logined!</h3>}
+					{!!login && (
 						<Link to="/reports" className="button">
 							<Button variant="contained" color="primary">
 								Reports
 							</Button>
 						</Link>
-					</Box>
+					)}
 				</div>
 			</Card>
 		</Container>
