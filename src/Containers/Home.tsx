@@ -6,12 +6,7 @@ import logo from "../../src/logo.svg";
 import { Card, Box, Button, Container } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import configuredAxios from "../Utils/Axios";
-
-interface IAuth {
-	email: string;
-	firstName: string;
-	lastName: string;
-}
+import { IAuth } from "../Models/auth.model";
 
 const Home = () => {
 	const [login, setLogin] = useState<IAuth>();
