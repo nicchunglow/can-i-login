@@ -3,7 +3,7 @@ import { Container, Card, Button, FormControl, Input, InputLabel, Snackbar } fro
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import Axios from "axios";
-import { ILogin } from "../Models/Users.model";
+import { ILogin } from "../Models/users.model";
 import "./Register.css";
 import "../Shared/Card.css";
 
