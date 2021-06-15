@@ -14,7 +14,7 @@
 
 - [Availble Scripts](#Available-Scripts)
 
-- [Package Issues](#Package-issues)
+- [Improvements](#Improvements)
 
 ### Introduction
 
@@ -106,5 +106,8 @@ npm run coverage // check code coverage.
 
 - REACT_APP_BASE_BACKEND_URL=http://localhost:3000 <= example if you are spinning the BE up first. 
 
+## Improvements
+
+I would like to work on more test cases on the frontend, as well as refactor some of the code as there are components that can be shared. 
 
 This project was bootstrapped with Create React App.
