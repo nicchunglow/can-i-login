@@ -104,7 +104,7 @@ npm run coverage // check code coverage.
 
 ## Environment Variables
 
-- REACT_APP_BASE_BACKEND_URL=http://localhost:3000 <= example if you are spinning the BE up first. 
+- REACT_APP_BASE_BACKEND_URL=http://localhost:3000 <= example 
 
 ## Improvements
 
