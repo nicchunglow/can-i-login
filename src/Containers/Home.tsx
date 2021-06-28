@@ -12,7 +12,6 @@ const Home = () => {
 	const [login, setLogin] = useState<IAuth>();
 	const loadLoginDetails = async () => {
 		const res = await configuredAxios.get(process.env.REACT_APP_BASE_BACKEND_URL + "/auth");
-		console.log(res);
 		setLogin(res.data);
 	};
 
