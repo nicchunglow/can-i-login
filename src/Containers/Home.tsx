@@ -39,7 +39,7 @@ const Home = () => {
 							</Button>
 						</Link>
 					</Box>
-					{!!login && <h3>Welcome {login.firstName}! You are now logined!</h3>}
+					{!!login && <h3>Welcome {login.firstName}! You are now logged in!</h3>}
 					{!!login && (
 						<Link to="/reports" className="button">
 							<Button variant="contained" color="primary">
