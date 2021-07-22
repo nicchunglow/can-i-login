@@ -54,6 +54,7 @@
 	},
 	"devDependencies": {
 		"pretty-quick": "^3.1.0",
-		"husky": "^6.0.0"
+		"prettier": "^2.3.2",
+		"husky": "^4.3.8"
 	}
 }
